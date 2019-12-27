@@ -66,6 +66,7 @@ class ImageViewerController: UIViewController {
         b.setTitle("Close", for: .normal)
         b.tintColor = .white
         b.addTarget(self, action: #selector(self.dismissFullScreen), for: .touchUpInside)
+        b.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         return b
     }()
     
