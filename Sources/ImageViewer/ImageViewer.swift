@@ -92,7 +92,7 @@ class ImageViewerController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        preconditionFailure("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -250,20 +250,5 @@ extension ImageViewerController: UIGestureRecognizerDelegate {
         
         return result
     }
-    
-}
-
-extension UIView {
-    
-//    func reduceFrameBy(original: CGRect, percent: CGFloat) {
-//        let newWidth = original.width*percent
-//        let newHeight = original.height*percent
-//
-//        let lostWidth = (frame.width-newWidth)/2.0
-//        let lostHeight = (frame.height-newHeight)/2.0
-//
-//      //  frame.size.height = newHeight
-//        //frame.size.width = newWidth
-//    }
     
 }
