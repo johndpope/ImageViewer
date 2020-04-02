@@ -101,7 +101,7 @@ class ContentView: UIScrollView {
         
         let imageViewSize = imageView.frame.size
         let imageSize = image.size
-        let realImageViewSize: CGSize
+        var realImageViewSize: CGSize
         
         if imageSize.width / imageSize.height > imageViewSize.width / imageViewSize.height {
             realImageViewSize = CGSize(
@@ -112,7 +112,13 @@ class ContentView: UIScrollView {
                 width: imageViewSize.height / imageSize.height * imageSize.width,
                 height: imageViewSize.height)
         }
-        
+        if realImageViewSize.width.isNaN {
+            realImageViewSize.width = 0
+        }
+        if realImageViewSize.height.isNaN {
+            realImageViewSize.height = 0
+        }
+
         imageView.frame = CGRect(origin: CGPoint.zero, size: realImageViewSize)
         
         centerImageView()
